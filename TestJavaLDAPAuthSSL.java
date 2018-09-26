@@ -121,12 +121,12 @@ class TestJavaLDAPAuthSSL {
 				try{
 					DirContext ctxUser = new InitialDirContext(envUser);
 					System.out.println("Successfully authenticated as " + sUserUID);
+					ctxUser .close;
 				}
 				// User credentials failure
 				catch (NamingException e) {
 					e.printStackTrace();
 				}
-				envUser.close;
 			}
 			// If no group matched the filter, the user is not a group member and an authorisation failure can be returned
 			else{
